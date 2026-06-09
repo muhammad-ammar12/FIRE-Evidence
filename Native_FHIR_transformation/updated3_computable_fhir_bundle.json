@@ -1,0 +1,528 @@
+{
+  "resourceType": "Bundle",
+  "id": "updated3-computable",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/ResearchStudy/study1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "study1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hormone Therapy for the Primary Prevention of Chronic Conditions in Postmenopausal Persons: US Preventive Services Task Force Recommendation Statement</div>"
+        },
+        "status": "active",
+        "title": "Hormone Therapy for the Primary Prevention of Chronic Conditions in Postmenopausal Persons: US Preventive Services Task Force Recommendation Statement",
+        "description": "Enrollment: 27347 participants; Study design: Randomized controlled trial; Setting: Single large trial (WHI) conducted in multiple centers in the United States; Follow-up duration: Up to 13 years; Blinding: Participants and researchers were blinded to the group assignments; Intention-to-treat: Yes; Funding source: National Institutes of Health (NIH) and other governmental health agencies",
+        "studyDesign": [
+          {
+            "text": "Randomized controlled trial"
+          }
+        ],
+        "comparisonGroup": [
+          {
+            "linkId": "group1",
+            "name": "group1",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          },
+          {
+            "linkId": "group2",
+            "name": "group2",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group2"
+            }
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "citation",
+            "resourceReference": {
+              "reference": "https://fire-evidence.example.org/fhir/Citation/citation1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group1",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Combined estrogen and progestin group</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "Combined estrogen and progestin group",
+        "description": "Combined estrogen and progestin group",
+        "quantity": 0,
+        "code": {
+          "text": "intervention-arm"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "text": "Participants received 0.625 mg/d of oral conjugated equine estrogens plus 2.5 mg/d of medroxyprogesterone acetate"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          },
+          {
+            "code": {
+              "text": "16,608 participants"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group2",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group2",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placebo group</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "Placebo group",
+        "description": "Placebo group",
+        "quantity": 16608,
+        "code": {
+          "text": "comparator-arm"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "text": "Participants received a placebo pill matching the intervention in appearance"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          },
+          {
+            "code": {
+              "text": "16,608 participants"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "population1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Postmenopausal women aged 50 to 79 years</div>"
+        },
+        "status": "active",
+        "name": "Population1",
+        "title": "Postmenopausal women aged 50 to 79 years",
+        "description": "Postmenopausal women aged 50 to 79 years",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: population"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Postmenopausal women aged 50 to 79 years",
+            "definitionCodeableConcept": {
+              "text": "Postmenopausal women aged 50 to 79 years"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Generally healthy women considering hormone therapy for the primary prevention of chronic medical conditions",
+            "definitionCodeableConcept": {
+              "text": "Generally healthy women considering hormone therapy for the primary prevention of chronic medical conditions"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Exclusions: history of breast cancer, coronary heart disease, or other serious medical conditions",
+            "definitionCodeableConcept": {
+              "text": "Exclusions: history of breast cancer, coronary heart disease, or other serious medical conditions"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "intervention1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Combined estrogen and progestin therapy</div>"
+        },
+        "status": "active",
+        "name": "Intervention1",
+        "title": "Combined estrogen and progestin therapy",
+        "description": "Combined estrogen and progestin therapy",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: intervention"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Combined estrogen and progestin therapy",
+            "definitionCodeableConcept": {
+              "text": "Combined estrogen and progestin therapy"
+            },
+            "exclude": false
+          },
+          {
+            "description": "0.625 mg/d of oral conjugated equine estrogens plus 2.5 mg/d of medroxyprogesterone acetate",
+            "definitionCodeableConcept": {
+              "text": "0.625 mg/d of oral conjugated equine estrogens plus 2.5 mg/d of medroxyprogesterone acetate"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "comparator1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placebo</div>"
+        },
+        "status": "active",
+        "name": "Comparator1",
+        "title": "Placebo",
+        "description": "Placebo",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: comparator"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Placebo",
+            "definitionCodeableConcept": {
+              "text": "Placebo"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Placebo pill matching the intervention in appearance",
+            "definitionCodeableConcept": {
+              "text": "Placebo pill matching the intervention in appearance"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "outcome1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Incidence of chronic conditions such as coronary heart disease, breast cancer, stroke, and fractures</div>"
+        },
+        "status": "active",
+        "name": "Outcome1",
+        "title": "Incidence of chronic conditions such as coronary heart disease, breast cancer, stroke, and fractures",
+        "description": "Incidence of chronic conditions such as coronary heart disease, breast cancer, stroke, and fractures",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: outcome"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Incidence of chronic conditions such as coronary heart disease, breast cancer, stroke, and fractures",
+            "definitionCodeableConcept": {
+              "text": "Incidence of chronic conditions such as coronary heart disease, breast cancer, stroke, and fractures"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Primary outcome",
+            "definitionCodeableConcept": {
+              "text": "Primary outcome"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Evidence/evidence1",
+      "resource": {
+        "resourceType": "Evidence",
+        "id": "evidence1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Primary Outcome: All-Cause Mortality</div>"
+        },
+        "status": "active",
+        "title": "Primary Outcome: All-Cause Mortality",
+        "description": "No significant difference in all-cause mortality between hormone therapy and placebo.",
+        "variableDefinition": [
+          {
+            "description": "population",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "population",
+                  "display": "population"
+                }
+              ],
+              "text": "population"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1"
+            }
+          },
+          {
+            "description": "intervention",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "exposure",
+                  "display": "exposure"
+                }
+              ],
+              "text": "intervention"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1"
+            }
+          },
+          {
+            "description": "comparator",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "referenceExposure",
+                  "display": "reference exposure"
+                }
+              ],
+              "text": "comparator"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1"
+            }
+          },
+          {
+            "description": "outcome",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "measuredVariable",
+                  "display": "measured variable"
+                }
+              ],
+              "text": "outcome"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1"
+            }
+          },
+          {
+            "description": "group",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "subpopulation",
+                  "display": "subpopulation"
+                }
+              ],
+              "text": "group"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          }
+        ],
+        "statistic": [
+          {
+            "description": "HR, 1.02 (95% CI, 0.96-1.08) for combined estrogen and progestin",
+            "statisticType": {
+              "text": "hazard ratio"
+            },
+            "quantity": {
+              "value": 1.02
+            },
+            "sampleSize": {
+              "description": "Intervention Group (Combined Estrogen and Progestin)",
+              "numberOfParticipants": 16608
+            }
+          },
+          {
+            "description": "HR, 0.94 (95% CI, 0.88-1.01) for estrogen alone",
+            "statisticType": {
+              "text": "hazard ratio"
+            },
+            "quantity": {
+              "value": 0.94
+            },
+            "sampleSize": {
+              "description": "Intervention Group (Estrogen Alone)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Evidence/evidence2",
+      "resource": {
+        "resourceType": "Evidence",
+        "id": "evidence2",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Adverse Event: Invasive Breast Cancer</div>"
+        },
+        "status": "active",
+        "title": "Adverse Event: Invasive Breast Cancer",
+        "description": "Increased risk of invasive breast cancer with combined estrogen and progestin.",
+        "variableDefinition": [
+          {
+            "description": "population",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "population",
+                  "display": "population"
+                }
+              ],
+              "text": "population"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1"
+            }
+          },
+          {
+            "description": "intervention",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "exposure",
+                  "display": "exposure"
+                }
+              ],
+              "text": "intervention"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1"
+            }
+          },
+          {
+            "description": "comparator",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "referenceExposure",
+                  "display": "reference exposure"
+                }
+              ],
+              "text": "comparator"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1"
+            }
+          },
+          {
+            "description": "outcome",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "measuredVariable",
+                  "display": "measured variable"
+                }
+              ],
+              "text": "outcome"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1"
+            }
+          },
+          {
+            "description": "group",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "subpopulation",
+                  "display": "subpopulation"
+                }
+              ],
+              "text": "group"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          }
+        ],
+        "statistic": [
+          {
+            "description": "HR, 1.24 (95% CI, 1.01-1.53) for combined estrogen and progestin",
+            "statisticType": {
+              "text": "hazard ratio"
+            },
+            "quantity": {
+              "value": 1.24
+            },
+            "sampleSize": {
+              "description": "Intervention Group (Combined Estrogen and Progestin)",
+              "numberOfParticipants": 16608
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Citation/citation1",
+      "resource": {
+        "resourceType": "Citation",
+        "id": "citation1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hormone Therapy for the Primary Prevention of Chronic Conditions in Postmenopausal Persons: US Preventive Services Task Force Recommendation Statement</div>"
+        },
+        "status": "active",
+        "title": "Hormone Therapy for the Primary Prevention of Chronic Conditions in Postmenopausal Persons: US Preventive Services Task Force Recommendation Statement",
+        "identifier": [
+          {
+            "system": "https://doi.org",
+            "value": "10.1001/jama.2022.18625"
+          },
+          {
+            "system": "https://pubmed.ncbi.nlm.nih.gov",
+            "value": "36318127"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,564 @@
+{
+  "resourceType": "Bundle",
+  "id": "batur-2025-computable",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/ResearchStudy/study1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "study1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Nationwide Prospective Cohort Study on Hormonal Contraceptives and Cardiovascular Risk</div>"
+        },
+        "status": "active",
+        "title": "Nationwide Prospective Cohort Study on Hormonal Contraceptives and Cardiovascular Risk",
+        "description": "Enrollment: 2025691 participants; Study design: prospective cohort study; Setting: Nationwide (Denmark); Follow-up duration: 1996 to 2021; Allocation concealment: Not applicable; Blinding: Not applicable; Intention-to-treat: Not applicable; Funding source: Sygeforsikringen “Danmark” (grant 2021-0128)",
+        "studyDesign": [
+          {
+            "text": "prospective cohort study"
+          }
+        ],
+        "comparisonGroup": [
+          {
+            "linkId": "group1",
+            "name": "group1",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          },
+          {
+            "linkId": "group2",
+            "name": "group2",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group2"
+            }
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "citation",
+            "resourceReference": {
+              "reference": "https://fire-evidence.example.org/fhir/Citation/citation1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group1",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Use of contemporary hormonal contraceptives</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "Use of contemporary hormonal contraceptives",
+        "description": "Use of contemporary hormonal contraceptives",
+        "code": {
+          "text": "intervention-arm"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "text": "Combined oral contraceptives, vaginal ring, patch, progestin-only pills, subcutaneous implant, and intrauterine devices"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group2",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group2",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No use of hormonal contraception</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "No use of hormonal contraception",
+        "description": "No use of hormonal contraception",
+        "code": {
+          "text": "comparator-arm"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "population1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Women aged 15-49 years residing in Denmark</div>"
+        },
+        "status": "active",
+        "name": "Population1",
+        "title": "Women aged 15-49 years residing in Denmark",
+        "description": "Women aged 15-49 years residing in Denmark",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: population"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Women aged 15-49 years residing in Denmark",
+            "definitionCodeableConcept": {
+              "text": "Women aged 15-49 years residing in Denmark"
+            },
+            "exclude": false
+          },
+          {
+            "description": "No history of arterial or venous thrombosis, cancer (except non-melanoma skin cancer), thrombophilia, liver disease, kidney disease, use of antipsychotics, infertility treatment, hormone therapy use, oophorectomy, hysterectomy, polycystic ovary syndrome, and endometriosis",
+            "definitionCodeableConcept": {
+              "text": "No history of arterial or venous thrombosis, cancer (except non-melanoma skin cancer), thrombophilia, liver disease, kidney disease, use of antipsychotics, infertility treatment, hormone therapy use, oophorectomy, hysterectomy, polycystic ovary syndrome, and endometriosis"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "intervention1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Use of contemporary hormonal contraceptives</div>"
+        },
+        "status": "active",
+        "name": "Intervention1",
+        "title": "Use of contemporary hormonal contraceptives",
+        "description": "Use of contemporary hormonal contraceptives",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: intervention"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Use of contemporary hormonal contraceptives",
+            "definitionCodeableConcept": {
+              "text": "Use of contemporary hormonal contraceptives"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Combined oral contraceptives, vaginal ring, patch, progestin-only pills, subcutaneous implant, and intrauterine devices",
+            "definitionCodeableConcept": {
+              "text": "Combined oral contraceptives, vaginal ring, patch, progestin-only pills, subcutaneous implant, and intrauterine devices"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "comparator1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No use of hormonal contraception</div>"
+        },
+        "status": "active",
+        "name": "Comparator1",
+        "title": "No use of hormonal contraception",
+        "description": "No use of hormonal contraception",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: comparator"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "No use of hormonal contraception",
+            "definitionCodeableConcept": {
+              "text": "No use of hormonal contraception"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "outcome1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">First-time diagnosis of ischaemic stroke or myocardial infarction at discharge</div>"
+        },
+        "status": "active",
+        "name": "Outcome1",
+        "title": "First-time diagnosis of ischaemic stroke or myocardial infarction at discharge",
+        "description": "First-time diagnosis of ischaemic stroke or myocardial infarction at discharge",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: outcome"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "First-time diagnosis of ischaemic stroke or myocardial infarction at discharge",
+            "definitionCodeableConcept": {
+              "text": "First-time diagnosis of ischaemic stroke or myocardial infarction at discharge"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Evidence/evidence1",
+      "resource": {
+        "resourceType": "Evidence",
+        "id": "evidence1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ischaemic Stroke Incidence</div>"
+        },
+        "status": "active",
+        "title": "Ischaemic Stroke Incidence",
+        "description": "Incidence of ischaemic stroke in women using hormonal contraceptives",
+        "variableDefinition": [
+          {
+            "description": "population",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "population",
+                  "display": "population"
+                }
+              ],
+              "text": "population"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1"
+            }
+          },
+          {
+            "description": "intervention",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "exposure",
+                  "display": "exposure"
+                }
+              ],
+              "text": "intervention"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1"
+            }
+          },
+          {
+            "description": "comparator",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "referenceExposure",
+                  "display": "reference exposure"
+                }
+              ],
+              "text": "comparator"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1"
+            }
+          },
+          {
+            "description": "outcome",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "measuredVariable",
+                  "display": "measured variable"
+                }
+              ],
+              "text": "outcome"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1"
+            }
+          },
+          {
+            "description": "group",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "subpopulation",
+                  "display": "subpopulation"
+                }
+              ],
+              "text": "group"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          }
+        ],
+        "statistic": [
+          {
+            "description": "Ischaemic stroke incidence with Combined Oral Contraceptives",
+            "statisticType": {
+              "text": "incidence rate"
+            },
+            "quantity": {
+              "value": 39.0,
+              "unit": "per 100,000 person years"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 36 to 42"
+              }
+            ],
+            "sampleSize": {
+              "description": "Intervention Group"
+            }
+          },
+          {
+            "description": "Ischaemic stroke incidence with No use of hormonal contraception",
+            "statisticType": {
+              "text": "incidence rate"
+            },
+            "quantity": {
+              "value": 18.0,
+              "unit": "per 100,000 person years"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 18 to 19"
+              }
+            ],
+            "sampleSize": {
+              "description": "Control Group"
+            }
+          },
+          {
+            "description": "Adjusted Incidence Rate Ratio for Ischaemic Stroke",
+            "statisticType": {
+              "text": "incidence rate ratio"
+            },
+            "quantity": {
+              "value": 2.0
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 1.9 to 2.2"
+              }
+            ]
+          },
+          {
+            "description": "Standardised Incidence Rate Difference for Ischaemic Stroke",
+            "statisticType": {
+              "text": "incidence rate difference"
+            },
+            "quantity": {
+              "value": 21.0,
+              "unit": "extra strokes per 100,000 person years"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 18 to 24"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Evidence/evidence2",
+      "resource": {
+        "resourceType": "Evidence",
+        "id": "evidence2",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Myocardial Infarction Incidence</div>"
+        },
+        "status": "active",
+        "title": "Myocardial Infarction Incidence",
+        "description": "Incidence of myocardial infarction in women using hormonal contraceptives",
+        "variableDefinition": [
+          {
+            "description": "population",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "population",
+                  "display": "population"
+                }
+              ],
+              "text": "population"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1"
+            }
+          },
+          {
+            "description": "intervention",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "exposure",
+                  "display": "exposure"
+                }
+              ],
+              "text": "intervention"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1"
+            }
+          },
+          {
+            "description": "comparator",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "referenceExposure",
+                  "display": "reference exposure"
+                }
+              ],
+              "text": "comparator"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1"
+            }
+          },
+          {
+            "description": "outcome",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "measuredVariable",
+                  "display": "measured variable"
+                }
+              ],
+              "text": "outcome"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1"
+            }
+          },
+          {
+            "description": "group",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "subpopulation",
+                  "display": "subpopulation"
+                }
+              ],
+              "text": "group"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          }
+        ],
+        "statistic": [
+          {
+            "description": "Myocardial infarction incidence with Combined Oral Contraceptives",
+            "statisticType": {
+              "text": "incidence rate"
+            },
+            "quantity": {
+              "value": 18.0,
+              "unit": "per 100,000 person years"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 16 to 20"
+              }
+            ],
+            "sampleSize": {
+              "description": "Intervention Group"
+            }
+          },
+          {
+            "description": "Myocardial infarction incidence with No use of hormonal contraception",
+            "statisticType": {
+              "text": "incidence rate"
+            },
+            "quantity": {
+              "value": 8.0,
+              "unit": "per 100,000 person years"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 8 to 9"
+              }
+            ],
+            "sampleSize": {
+              "description": "Control Group"
+            }
+          },
+          {
+            "description": "Adjusted Incidence Rate Ratio for Myocardial Infarction",
+            "statisticType": {
+              "text": "incidence rate ratio"
+            },
+            "quantity": {
+              "value": 2.0
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 1.7 to 2.2"
+              }
+            ]
+          },
+          {
+            "description": "Standardised Incidence Rate Difference for Myocardial Infarction",
+            "statisticType": {
+              "text": "incidence rate difference"
+            },
+            "quantity": {
+              "value": 10.0,
+              "unit": "extra myocardial infarctions per 100,000 person years"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 95% CI: 7 to 12"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Citation/citation1",
+      "resource": {
+        "resourceType": "Citation",
+        "id": "citation1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Nationwide Prospective Cohort Study on Hormonal Contraceptives and Cardiovascular Risk</div>"
+        },
+        "status": "active",
+        "title": "Nationwide Prospective Cohort Study on Hormonal Contraceptives and Cardiovascular Risk"
+      }
+    }
+  ]
+}

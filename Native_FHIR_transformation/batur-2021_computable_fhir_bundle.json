@@ -1,0 +1,594 @@
+{
+  "resourceType": "Bundle",
+  "id": "batur-2021-computable",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/ResearchStudy/study1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "study1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Randomized controlled trial on ovarian and tubal cancer screening</div>"
+        },
+        "status": "active",
+        "title": "Randomized controlled trial on ovarian and tubal cancer screening",
+        "description": "Enrollment: 202638 participants; Study design: randomized controlled trial; Setting: 13 centers in National Health Service trusts in England, Wales, and Northern Ireland; Follow-up duration: 16.3 years; Allocation concealment: The trial management system confirmed eligibility and then randomly allocated women using the Visual Basic randomisation statement and the RND function; Blinding: Investigators and participants were aware of group allocation, but members of the outcomes committee were masked to the randomization group; Intention-to-treat: Yes; Funding source: National Institute for Health Research, Cancer Research UK, and The Eve Appeal",
+        "studyDesign": [
+          {
+            "text": "randomized controlled trial"
+          }
+        ],
+        "comparisonGroup": [
+          {
+            "linkId": "group1",
+            "name": "group1",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          },
+          {
+            "linkId": "group2",
+            "name": "group2",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group2"
+            }
+          },
+          {
+            "linkId": "group3",
+            "name": "group3",
+            "observedGroup": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group3"
+            }
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "citation",
+            "resourceReference": {
+              "reference": "https://fire-evidence.example.org/fhir/Citation/citation1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group1",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening",
+        "description": "Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening",
+        "quantity": 50625,
+        "code": {
+          "text": "intervention-arm"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "text": "50,625 participants"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group2",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group2",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ultrasound screening (USS) using transvaginal ultrasound as the primary test</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "Ultrasound screening (USS) using transvaginal ultrasound as the primary test",
+        "description": "Ultrasound screening (USS) using transvaginal ultrasound as the primary test",
+        "quantity": 50623,
+        "code": {
+          "text": "comparator-arm"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "text": "50,623 participants"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Group/group3",
+      "resource": {
+        "resourceType": "Group",
+        "id": "group3",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No screening group</div>"
+        },
+        "type": "person",
+        "membership": "definitional",
+        "name": "No screening group",
+        "description": "No screening group",
+        "quantity": 101314,
+        "code": {
+          "text": "comparator-arm"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "text": "101,314 participants"
+            },
+            "valueBoolean": true,
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "population1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Postmenopausal women aged 50–74 years</div>"
+        },
+        "status": "active",
+        "name": "Population1",
+        "title": "Postmenopausal women aged 50–74 years",
+        "description": "Postmenopausal women aged 50–74 years",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: population"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Postmenopausal women aged 50–74 years",
+            "definitionCodeableConcept": {
+              "text": "Postmenopausal women aged 50–74 years"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Exclusions: Bilateral oophorectomy, previous ovarian or active non-ovarian malignancy, or increased familial ovarian cancer risk",
+            "definitionCodeableConcept": {
+              "text": "Exclusions: Bilateral oophorectomy, previous ovarian or active non-ovarian malignancy, or increased familial ovarian cancer risk"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "intervention1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening</div>"
+        },
+        "status": "active",
+        "name": "Intervention1",
+        "title": "Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening",
+        "description": "Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: intervention"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening",
+            "definitionCodeableConcept": {
+              "text": "Multimodal screening (MMS) using longitudinal CA125 and second-line transvaginal ultrasound screening"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "comparator1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ultrasound screening (USS) using transvaginal ultrasound as the primary test</div>"
+        },
+        "status": "active",
+        "name": "Comparator1",
+        "title": "Ultrasound screening (USS) using transvaginal ultrasound as the primary test",
+        "description": "Ultrasound screening (USS) using transvaginal ultrasound as the primary test",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: comparator"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Ultrasound screening (USS) using transvaginal ultrasound as the primary test",
+            "definitionCodeableConcept": {
+              "text": "Ultrasound screening (USS) using transvaginal ultrasound as the primary test"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1",
+      "resource": {
+        "resourceType": "EvidenceVariable",
+        "id": "outcome1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Death due to ovarian or tubal cancer</div>"
+        },
+        "status": "active",
+        "name": "Outcome1",
+        "title": "Death due to ovarian or tubal cancer",
+        "description": "Death due to ovarian or tubal cancer",
+        "note": [
+          {
+            "text": "FIRE-EVIDENCE variable role: outcome"
+          }
+        ],
+        "characteristic": [
+          {
+            "description": "Death due to ovarian or tubal cancer",
+            "definitionCodeableConcept": {
+              "text": "Death due to ovarian or tubal cancer"
+            },
+            "exclude": false
+          },
+          {
+            "description": "Death due to ovarian or tubal cancer (WHO 2014 criteria)",
+            "definitionCodeableConcept": {
+              "text": "Death due to ovarian or tubal cancer (WHO 2014 criteria)"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Evidence/evidence1",
+      "resource": {
+        "resourceType": "Evidence",
+        "id": "evidence1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Primary Outcome: Death due to ovarian or tubal cancer</div>"
+        },
+        "status": "active",
+        "title": "Primary Outcome: Death due to ovarian or tubal cancer",
+        "description": "Death due to ovarian or tubal cancer by June 30, 2020",
+        "variableDefinition": [
+          {
+            "description": "population",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "population",
+                  "display": "population"
+                }
+              ],
+              "text": "population"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1"
+            }
+          },
+          {
+            "description": "intervention",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "exposure",
+                  "display": "exposure"
+                }
+              ],
+              "text": "intervention"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1"
+            }
+          },
+          {
+            "description": "comparator",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "referenceExposure",
+                  "display": "reference exposure"
+                }
+              ],
+              "text": "comparator"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1"
+            }
+          },
+          {
+            "description": "outcome",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "measuredVariable",
+                  "display": "measured variable"
+                }
+              ],
+              "text": "outcome"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1"
+            }
+          },
+          {
+            "description": "group",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "subpopulation",
+                  "display": "subpopulation"
+                }
+              ],
+              "text": "group"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          }
+        ],
+        "statistic": [
+          {
+            "description": "296 deaths (0.6% of 50,625) in MMS Group",
+            "statisticType": {
+              "text": "event rate"
+            },
+            "quantity": {
+              "value": 0.6,
+              "unit": "%"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 0.6"
+              }
+            ],
+            "sampleSize": {
+              "description": "MMS Group",
+              "numberOfParticipants": 50625
+            }
+          },
+          {
+            "description": "291 deaths (0.6% of 50,623) in USS Group",
+            "statisticType": {
+              "text": "event rate"
+            },
+            "quantity": {
+              "value": 0.6,
+              "unit": "%"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 0.6"
+              }
+            ],
+            "sampleSize": {
+              "description": "USS Group",
+              "numberOfParticipants": 50623
+            }
+          },
+          {
+            "description": "619 deaths (0.6% of 101,314) in No Screening Group",
+            "statisticType": {
+              "text": "event rate"
+            },
+            "quantity": {
+              "value": 0.6,
+              "unit": "%"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 0.6"
+              }
+            ],
+            "sampleSize": {
+              "description": "No Screening Group",
+              "numberOfParticipants": 101314
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Evidence/evidence2",
+      "resource": {
+        "resourceType": "Evidence",
+        "id": "evidence2",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Secondary Outcome: Ovarian and tubal cancer incidence and stage</div>"
+        },
+        "status": "active",
+        "title": "Secondary Outcome: Ovarian and tubal cancer incidence and stage",
+        "description": "Ovarian and tubal cancer incidence and stage",
+        "variableDefinition": [
+          {
+            "description": "population",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "population",
+                  "display": "population"
+                }
+              ],
+              "text": "population"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/population1"
+            }
+          },
+          {
+            "description": "intervention",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "exposure",
+                  "display": "exposure"
+                }
+              ],
+              "text": "intervention"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/intervention1"
+            }
+          },
+          {
+            "description": "comparator",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "referenceExposure",
+                  "display": "reference exposure"
+                }
+              ],
+              "text": "comparator"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/comparator1"
+            }
+          },
+          {
+            "description": "outcome",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "measuredVariable",
+                  "display": "measured variable"
+                }
+              ],
+              "text": "outcome"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/EvidenceVariable/outcome1"
+            }
+          },
+          {
+            "description": "group",
+            "variableRole": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/variable-role",
+                  "code": "subpopulation",
+                  "display": "subpopulation"
+                }
+              ],
+              "text": "group"
+            },
+            "observed": {
+              "reference": "https://fire-evidence.example.org/fhir/Group/group1"
+            }
+          }
+        ],
+        "statistic": [
+          {
+            "description": "522 cases (1.0% of 50,625) in MMS Group",
+            "statisticType": {
+              "text": "event rate"
+            },
+            "quantity": {
+              "value": 1.0,
+              "unit": "%"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 1.0"
+              }
+            ],
+            "sampleSize": {
+              "description": "MMS Group",
+              "numberOfParticipants": 50625
+            }
+          },
+          {
+            "description": "517 cases (1.0% of 50,623) in USS Group",
+            "statisticType": {
+              "text": "event rate"
+            },
+            "quantity": {
+              "value": 1.0,
+              "unit": "%"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 1.0"
+              }
+            ],
+            "sampleSize": {
+              "description": "USS Group",
+              "numberOfParticipants": 50623
+            }
+          },
+          {
+            "description": "1016 cases (1.0% of 101,314) in No Screening Group",
+            "statisticType": {
+              "text": "event rate"
+            },
+            "quantity": {
+              "value": 1.0,
+              "unit": "%"
+            },
+            "attributeEstimate": [
+              {
+                "description": "Event rate / interval information: 1.0"
+              }
+            ],
+            "sampleSize": {
+              "description": "No Screening Group",
+              "numberOfParticipants": 101314
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fire-evidence.example.org/fhir/Citation/citation1",
+      "resource": {
+        "resourceType": "Citation",
+        "id": "citation1",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Randomized controlled trial on ovarian and tubal cancer screening</div>"
+        },
+        "status": "active",
+        "title": "Randomized controlled trial on ovarian and tubal cancer screening"
+      }
+    }
+  ]
+}

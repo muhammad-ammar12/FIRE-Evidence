@@ -1,0 +1,32 @@
+FHIR Validation tool Version 6.9.9 (Git# f50ef63a178c). Built 2026-05-29T20:15:56.943Z (6 days old)
+  Java:   23.0.2 from C:\Program Files\Java\jdk-23 on amd64 (64bit). 8132MB available
+  Paths:  Current = C:\Users\S23103156\Downloads\fire, Package Cache = C:\Users\S23103156\.fhir\packages
+  Params: new_fhir_outputs_v3\batur_computable_fhir_bundle.json -version 5.0.0
+  Locale: United Kingdom/GB
+  Jurisdiction: United Kingdom of Great Britain and Northern Ireland
+Loading
+  Loading FHIR v5.0.0 from hl7.fhir.r5.core#5.0.0
+  Load hl7.terminology.r5#6.2.0 - 4288 resources (00:07.496)
+  Load hl7.fhir.uv.extensions.r5#5.2.0 - 759 resources (00:00.113)
+  Loaded FHIR - 8001 resources (00:00.000)
+  Terminology server http://tx.fhir.org - Version Connected to Terminology Server at http://tx.fhir.org (00:01.776)
+  Load hl7.terminology#7.1.0 - 4072 resources (00:01.642)
+  Package Summary: [hl7.fhir.r5.core#5.0.0, hl7.fhir.xver-extensions#0.1.0, hl7.terminology.r5#6.2.0, hl7.fhir.uv.extensions.r5#5.2.0, hl7.terminology#7.1.0]
+  Terminology Cache at C:\Users\S23103~1\AppData\Local\Temp\default-tx-cache
+  Get set... 
+  ...go! (00:01.251)
+Cached new session. Cache size = 1
+Sources to validate: new_fhir_outputs_v3\batur_computable_fhir_bundle.json
+Validating
+  Validate new_fhir_outputs_v3\batur_computable_fhir_bundle.json
+ 00:00.414
+Done. Times: Loading: 00:12.353, validation: 00:00.414. Memory = 795Mb
+
+Success: 0 errors, 2 warnings, 4 notes
+  Information @ Bundle.entry[1].resource/*Group/group1*/.code (line 63, col10): Binding for path Bundle.entry[1].resource/*Group/group1*/.code in profile StructureDefinition[http://hl7.org/fhir/StructureDefinition/Group|5.0.0] has no source, so can't be checked, validating against Base FHIR Standard
+  Information @ Bundle.entry[1].resource/*Group/group1*/.characteristic[0].code (line 68, col14): Binding for path Bundle.entry[1].resource/*Group/group1*/.characteristic[0].code in profile StructureDefinition[http://hl7.org/fhir/StructureDefinition/Group|5.0.0] has no source, so can't be checked, validating against Base FHIR Standard
+  Information @ Bundle.entry[2].resource/*Group/group2*/.code (line 91, col10): Binding for path Bundle.entry[2].resource/*Group/group2*/.code in profile StructureDefinition[http://hl7.org/fhir/StructureDefinition/Group|5.0.0] has no source, so can't be checked, validating against Base FHIR Standard
+  Information @ Bundle.entry[2].resource/*Group/group2*/.characteristic[0].code (line 96, col14): Binding for path Bundle.entry[2].resource/*Group/group2*/.characteristic[0].code in profile StructureDefinition[http://hl7.org/fhir/StructureDefinition/Group|5.0.0] has no source, so can't be checked, validating against Base FHIR Standard
+  Warning @ Bundle.entry[7].resource/*Evidence/evidence1*/.statistic[0].statisticType (line 325, col14): No code provided, and a code should be provided from the value set 'Statistic Type' (http://hl7.org/fhir/ValueSet/statistic-type|5.0.0), validating against Base FHIR Standard
+  Warning @ Bundle.entry[8].resource/*Evidence/evidence2*/.statistic[0].statisticType (line 441, col14): No code provided, and a code should be provided from the value set 'Statistic Type' (http://hl7.org/fhir/ValueSet/statistic-type|5.0.0), validating against Base FHIR Standard
+Done. Times: Loading: 00:12.353, validation: 00:00.414. Max Memory = 7Gb
