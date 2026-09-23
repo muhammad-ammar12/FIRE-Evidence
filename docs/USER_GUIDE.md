@@ -252,7 +252,7 @@ up_Format_evidence(
 )
 ```
 
-Select the model name and output-token limit for the run. The supplied OpenAI implementation uses temperature `0.0`. Another provider can be used by replacing the model adapter while preserving the `EvidenceGraph` Pydantic output contract.
+Select the model name and output-token limit for the run. The supplied OpenAI implementation uses temperature `0.0`. Another provider can be used by replacing the model adapter while preserving the Pydantic schema of the FHIR-aligned evidence model.
 
 Run:
 
@@ -266,11 +266,11 @@ The example writes:
 batur-2025_computable.docx
 ```
 
-This DOCX contains the FHIR-aligned `EvidenceGraph` intermediate representation. Its principal objects are `ResearchStudy`, `Group`, `EvidenceVariable`, `Evidence`, and `Citation`, with optional `ArtifactAssessment` objects.
+This DOCX contains the FHIR-aligned evidence model. Its principal objects are `ResearchStudy`, `Group`, `EvidenceVariable`, `Evidence`, and `Citation`, with optional `ArtifactAssessment` objects.
 
 ## 10. Serialize native FHIR R5 resources
 
-The native serializer is a separate deterministic process. It reads the FHIR-aligned constructor representation and writes a native FHIR R5 collection `Bundle`.
+The native serializer is a separate conversion process. It reads the FHIR-aligned constructor representation and writes a native FHIR R5 collection `Bundle`.
 
 Serialize the output produced in step 9:
 
@@ -301,7 +301,7 @@ work/native_fhir/batur_computable_fhir_bundle.json
 Download the HL7 FHIR Validator CLI and place the JAR at `validator_cli.jar` in the repository root. The reported configuration used:
 
 ```text
-HL7 FHIR Validator: 6.9.9
+HL7 FHIR Validator: 6.9.9 (Git f50ef63a178c; built 2026-05-29T20:15:56.943Z)
 Java: 23.0.2
 FHIR release: R5 5.0.0
 ```
@@ -328,7 +328,7 @@ Open the generated report and review the validator summary, errors, warnings, an
 | Evidence extraction | FAISS index and extraction DOCX. |
 | Correctness/completeness evaluation | JSON/CSV/XLSX result and adjudication files. |
 | RAGAS evaluation | Evaluation dataframe and notebook outputs. |
-| FHIR-aligned generation | Constructor-style `EvidenceGraph` DOCX. |
+| FHIR-aligned generation | Constructor-style FHIR-aligned evidence-model DOCX. |
 | Native serialization | FHIR R5 collection `Bundle` JSON. |
 | FHIR validation | Validator text report. |
 

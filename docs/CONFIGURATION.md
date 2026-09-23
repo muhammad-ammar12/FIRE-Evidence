@@ -36,7 +36,8 @@ FIRE-EVIDENCE is model-agnostic. The values below describe the configuration use
 | JupyterLab | 4.3.6 |
 | IPython kernel | 6.29.5 |
 | HL7 FHIR Validator | 6.9.9 (`f50ef63a178c`) |
-| Java | 23.0.2 |
+| Validator build | `2026-05-29T20:15:56.943Z` |
+| Java | 23.0.2, 64-bit amd64 |
 | FHIR release | R5 5.0.0 |
 
 The installable Python dependencies are defined in the root `requirements.txt` file. Native FHIR serialization alone requires `requirements-fhir.txt`.
@@ -163,7 +164,7 @@ The reported FHIR-aligned generation configuration is:
 | Model | GPT-4o |
 | Temperature | 0.0 |
 | Maximum output tokens | 2500 |
-| Output parser | `PydanticOutputParser` with `EvidenceGraph` |
+| Output parser | `PydanticOutputParser` with the FHIR-aligned evidence-model schema |
 
 The function is defined in `FHIR_aligned/latest_LLM.py`:
 
@@ -171,11 +172,11 @@ The function is defined in `FHIR_aligned/latest_LLM.py`:
 up_Format_evidence(text, llm_model="gpt-4o", max_tokens=2500)
 ```
 
-Users can select another OpenAI model through `llm_model`. To use another provider, replace the model adapter and preserve the `EvidenceGraph` Pydantic output contract.
+Users can select another OpenAI model through `llm_model`. To use another provider, replace the model adapter and preserve the Pydantic schema of the FHIR-aligned evidence model.
 
 ## Native FHIR and validation
 
-Native serialization is deterministic and does not use an LLM. Run:
+Native FHIR R5 Bundle serialization is a separate conversion stage and does not use an LLM. Run:
 
 ```console
 python FHIR_compliant/FHIR-compliant_script.py INPUT.docx --outdir work/native_fhir
@@ -186,5 +187,7 @@ Validate the resulting Bundle with the reported validation profile:
 ```console
 java -jar validator_cli.jar BUNDLE.json -version 5.0.0
 ```
+
+The recorded validation session loaded `hl7.fhir.r5.core#5.0.0`, `hl7.fhir.xver-extensions#0.1.0`, `hl7.terminology.r5#6.2.0`, `hl7.fhir.uv.extensions.r5#5.2.0`, and `hl7.terminology#7.1.0`, and connected to `http://tx.fhir.org`. The recorded `updated3_computable_fhir_bundle.json` run completed with **0 errors, 3 warnings, and 6 notes**.
 
 The [FHIR guide](FHIR.md) describes the intermediate representation, native resource mapping, and validator workflow.

@@ -2,7 +2,7 @@
 
 ![FIRE-EVIDENCE: clinical study reports to structured evidence and FHIR R5](assets/fire-evidence-poster.png)
 
-FIRE-EVIDENCE is a research pipeline for extracting structured evidence from clinical-study reports, evaluating the extracted evidence, representing it as a constrained FHIR-aligned evidence graph, and converting that graph into native FHIR R5 resources for validation. The workflow is model-agnostic: users can select the language model, provider, temperature, seed, and related settings at the model-configuration points in the scripts and notebooks.
+FIRE-EVIDENCE is a research pipeline for extracting structured evidence from clinical-study reports, evaluating the extracted evidence, representing it using a constrained FHIR-aligned evidence model, and converting that representation into native FHIR R5 resources for validation. The workflow is model-agnostic: users can select the language model, provider, temperature, seed, and related settings at the model-configuration points in the scripts and notebooks.
 
 **Documentation:** [Step-by-step user guide](docs/USER_GUIDE.md) · [Reported configuration](docs/CONFIGURATION.md) · [FHIR workflow](docs/FHIR.md)
 
@@ -14,12 +14,12 @@ Clinical-study PDF
   -> page-level embedding and FAISS retrieval
   -> structured evidence extraction
   -> correctness/completeness and source-faithfulness evaluation
-  -> LLM-generated FHIR-aligned EvidenceGraph
-  -> deterministic native FHIR R5 Bundle serialization
+  -> LLM-generated FHIR-aligned evidence model
+  -> native FHIR R5 Bundle serialization
   -> HL7 FHIR Validator
 ```
 
-The FHIR-aligned `EvidenceGraph` is an intermediate representation. Native FHIR R5 serialization is performed separately by `FHIR_compliant/FHIR-compliant_script.py`, followed by a separate HL7 FHIR Validator invocation.
+The FHIR-aligned evidence model is an intermediate representation. Native FHIR R5 Bundle serialization is performed separately by `FHIR_compliant/FHIR-compliant_script.py`, followed by a separate HL7 FHIR Validator invocation.
 
 ## Key capabilities
 
@@ -30,7 +30,7 @@ The FHIR-aligned `EvidenceGraph` is an intermediate representation. Native FHIR 
 - PICO and statistical-result extraction with configurable language models.
 - Item-level correctness/completeness evaluation, expert adjudication, and RAGAS evaluation.
 - Pydantic-constrained FHIR-aligned evidence generation.
-- Deterministic conversion to native FHIR R5 `Bundle` resources.
+- Conversion to native FHIR R5 `Bundle` resources.
 - Base FHIR R5 validation with the HL7 FHIR Validator.
 
 ## Repository structure
@@ -40,8 +40,8 @@ The FHIR-aligned `EvidenceGraph` is an intermediate representation. Native FHIR 
 | [Extraction pipeline/](Extraction%20pipeline/) | PDF processing, indexing, prompts, retrieval, and evidence extraction. |
 | [Evaluation_code/](Evaluation_code/) | Correctness/completeness, adjudication, and RAGAS notebooks. |
 | [Baseline_pipeline/](Baseline_pipeline/) | Full-retrieval and first-indexed-unit baseline notebooks. |
-| [FHIR_aligned/](FHIR_aligned/) | `EvidenceGraph` schema and LLM-based FHIR-aligned generation. |
-| [FHIR_compliant/FHIR-compliant_script.py](FHIR_compliant/FHIR-compliant_script.py) | Deterministic native FHIR R5 serializer. |
+| [FHIR_aligned/](FHIR_aligned/) | Pydantic schema and LLM-based generation of the FHIR-aligned evidence model. |
+| [FHIR_compliant/FHIR-compliant_script.py](FHIR_compliant/FHIR-compliant_script.py) | Native FHIR R5 Bundle serialization. |
 | [FHIR_aligned_generations/](FHIR_aligned_generations/) | Example FHIR-aligned intermediate DOCX files. |
 | [Native_FHIR_transformation/](Native_FHIR_transformation/) | Example native FHIR Bundles and validator reports. |
 | [Annotations/](Annotations/) | Reference annotations used by the evaluation workflow. |
@@ -150,11 +150,11 @@ Place the extracted PICO and statistical text in `pico_text` in `FHIR_aligned/ma
 python FHIR_aligned/main.py
 ```
 
-The example writes `batur-2025_computable.docx`, containing the Pydantic-parsed FHIR-aligned `EvidenceGraph` representation.
+The example writes `batur-2025_computable.docx`, containing the Pydantic-parsed FHIR-aligned evidence model.
 
 ### 5. Serialize native FHIR R5
 
-Run the separate deterministic serializer:
+Run the separate native FHIR R5 Bundle serializer:
 
 ```console
 python FHIR_compliant/FHIR-compliant_script.py batur-2025_computable.docx --outdir work/native_fhir
@@ -180,7 +180,7 @@ Place the Validator CLI JAR at `validator_cli.jar`, then run base FHIR R5 valida
 java -jar validator_cli.jar work/native_fhir/batur-2025_computable_fhir_bundle.json -version 5.0.0 > work/native_fhir/batur-2025_validation_report.txt 2>&1
 ```
 
-The reported validation configuration used HL7 FHIR Validator **6.9.9**, Java **23.0.2**, and FHIR R5 **5.0.0**.
+The reported validation configuration used HL7 FHIR Validator **6.9.9** (Git `f50ef63a178c`, built `2026-05-29T20:15:56.943Z`), Java **23.0.2**, and FHIR R5 **5.0.0**.
 
 ## Model configuration
 
