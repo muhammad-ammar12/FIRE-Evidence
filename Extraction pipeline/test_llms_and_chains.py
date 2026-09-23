@@ -8,7 +8,7 @@ import formatting_wordfile as fm
 import os
 
 
-os.environ["OPENAI_API_KEY"] = "Your API KEY"
+# Credentials must be supplied through OPENAI_API_KEY in the environment.
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 #chat_LLM = ChatOpenAI(model_name='gpt-4o', temperature=0.5, model_kwargs={"seed": 42})
 chat_LLM = ChatOllama(model="llama3.1", temperature=0.5)

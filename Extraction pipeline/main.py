@@ -6,7 +6,7 @@ import os
 
 os.environ["MKL_SERVICE_FORCE_INTEL"] = "1"
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-os.environ["OPENAI_API_KEY"] = "Your API key"
+# Credentials must be supplied through OPENAI_API_KEY in the environment.
 
 def load_vectorize_and_store_into_VDB(filepath, filename):
     data = ts.extract_pdf_structured(filepath)
@@ -34,7 +34,7 @@ def decider(filename="write your file name",pdf_path="no need if just loading",s
 if __name__ == "__main__":
     
     
-    pdf_path = "V:/PhD Dev/New data/Docs/tanner.pdf"  # Replace with your file path  ""
+    pdf_path = "inputs/tanner.pdf"  # Replace with your file path  ""
     filename ="tanner-2025"
 
     ret=decider(filename=filename,pdf_path=pdf_path,store_and_load=True, load=False)

@@ -11,7 +11,7 @@ from openai import OpenAI
 
 
 
-os.environ["OPENAI_API_KEY"] = "Your API key here"
+# Credentials must be supplied through OPENAI_API_KEY in the environment.
 
 LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o")
 client = OpenAI()
