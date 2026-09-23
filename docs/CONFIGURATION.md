@@ -141,7 +141,7 @@ An optional Anthropic branch is configured with:
 | Setting | Value |
 | --- | --- |
 | Model | `claude-3-haiku-20240307` |
-| Temperature | 0.2 |
+| Temperature | 0.5 |
 | Maximum output tokens | 4096 |
 
 Select the model, provider, credentials, question, evidence file, annotation file, and FAISS index in the notebook configuration cells.
@@ -151,7 +151,7 @@ Select the model, provider, credentials, question, evidence file, annotation fil
 | Workflow | Model configuration | Retrieval configuration |
 | --- | --- | --- |
 | `Zero_Shot_RAG_extraction.ipynb` | GPT-4o, temperature 0.5 | Full indexed context within the notebook context budget |
-| `Zero_Shot_Abstract_extraction.ipynb` | GPT-4o, temperature 0 | First indexed unit for the first-unit baseline |
+| `Zero_Shot_Abstract_extraction.ipynb` | GPT-4o, temperature 0.5 | First indexed unit for the first-unit baseline |
 
 Both notebooks expose the model, temperature, index directory, study index name, and output directory in their configuration cells.
 
