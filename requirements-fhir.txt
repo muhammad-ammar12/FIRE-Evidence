@@ -1,0 +1,2 @@
+# Offline DOCX-to-native-FHIR serialization only; version from the environment record.
+python-docx==1.1.2
