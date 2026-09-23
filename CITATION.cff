@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite FIRE-EVIDENCE and include the exact repository commit used."
+type: software
+title: "FIRE-EVIDENCE: Enabling LLM-Driven, Machine-Readable Evidence Synthesis for Women's Health"
+authors:
+  - family-names: Shahid
+    given-names: Muhammad Ammar
+  - family-names: Afzal
+    given-names: Muhammad
+  - family-names: Lokker
+    given-names: Cynthia
+  - family-names: Wu
+    given-names: Wenyan
+  - family-names: Seker
+    given-names: Huseyin
+repository-code: "https://github.com/muhammad-ammar12/FIRE-Evidence"
+license: MIT
