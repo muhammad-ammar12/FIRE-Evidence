@@ -4,7 +4,7 @@
 
 FIRE-EVIDENCE processes clinical-study PDFs into structured evidence and a constrained FHIR-aligned evidence graph. It includes evidence-extraction code, reference-based evaluation notebooks, a separate deterministic native FHIR R5 serializer, and representative outputs. The implementation was developed for evidence synthesis in women's health.
 
-**Start here:** [Reproducibility guide](docs/REPRODUCIBILITY.md) · [Software and model configuration](docs/SOFTWARE.md) · [FHIR workflow](docs/FHIR.md) · [Known gaps](docs/KNOWN_GAPS.md).
+**Start here:** [Reproducibility guide](docs/REPRODUCIBILITY.md) · [Software and model configuration](docs/SOFTWARE.md) · [FHIR workflow](docs/FHIR.md).
 
 ## Overview
 
@@ -23,7 +23,7 @@ Evaluation and standardization are separate workflows; there is no automatic end
 
 This repository contains the source code used for the reported analyses. The analyses were originally executed in local and/or Google Colab environments, and the repository was subsequently created to make the implementation publicly available. See [snapshot provenance](docs/PROVENANCE.md) for the source commit, cleanup scope, and exact-checkout identification.
 
-**Reproduction scope:** this repository intentionally contains code and representative outputs, rather than a full copy of every input and run artifact. GPT-4o was used for the main extraction analysis; the uploaded script currently selects Llama 3.1 because it was configured for the separate exploratory comparison. The GPT-4o setting remains in the code as a commented alternative. Per-study outputs can be regenerated when the corresponding lawful source PDFs, reference data, model access, and run settings are supplied. The per-study results and evaluations were produced with the repository code; aggregate compilation was performed separately. Exact historical totals require the original cohort/adjudication inputs and that separate compilation record, as described in [the scope notes](docs/KNOWN_GAPS.md).
+**Reproduction scope:** this repository intentionally contains code and representative outputs, rather than a full copy of every input and run artifact. GPT-4o was used for the main extraction analysis; the uploaded script currently selects Llama 3.1 because it was configured for the separate exploratory comparison. The GPT-4o setting remains in the code as a commented alternative. Per-study outputs can be regenerated when the corresponding lawful source PDFs, reference data, model access, and run settings are supplied. The per-study results and evaluations were produced with the repository code; aggregate compilation was performed separately. Exact historical totals require the original cohort/adjudication inputs and that separate compilation record.
 
 ## Key capabilities
 
@@ -51,7 +51,7 @@ This repository contains the source code used for the reported analyses. The ana
 | [zero_shot_extractions.zip](zero_shot_extractions.zip), [RAG_ZERO_Abstract_extractions.zip](RAG_ZERO_Abstract_extractions.zip) | 14 text outputs per baseline archive. |
 | [Extraction pipeline.zip](Extraction%20pipeline.zip) | Duplicate distribution of the six extraction source files; use the directory for development. |
 | [assets/](assets/) | FIRE-EVIDENCE logo and repository poster. |
-| [docs/](docs/) | Execution instructions, configuration, FHIR boundaries, provenance, and unresolved gaps. |
+| [docs/](docs/) | Execution instructions, software configuration, FHIR boundaries, and provenance. |
 
 ## Installation
 
@@ -119,7 +119,7 @@ Output: `work/native_fhir/batur_computable_fhir_bundle.json`. All five supplied 
 
 ### Analysis and outputs
 
-The evaluation notebook calculates item-level correctness/completeness and exports audit/adjudication files. Baseline notebooks produce extraction outputs. Per-study artifacts can be regenerated with the supplied workflows and required inputs. Aggregate compilation was performed separately from this repository. The checked-in tree does not include that compilation procedure or its full input tables for statistical summaries, confidence intervals, significance tests, aggregate F1, convergence figures, cost/timing summaries, or the full ablation analysis. See the [output map and gaps](docs/KNOWN_GAPS.md).
+The evaluation notebook calculates item-level correctness/completeness and exports audit/adjudication files. Baseline notebooks produce extraction outputs. Per-study artifacts can be regenerated with the supplied workflows and required inputs. Aggregate compilation was performed separately from this repository. The checked-in tree does not include that compilation procedure or its full input tables for statistical summaries, confidence intervals, significance tests, aggregate F1, convergence figures, cost/timing summaries, or the full ablation analysis.
 
 ## Security, citation, and license
 

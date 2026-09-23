@@ -1,6 +1,6 @@
 # Reproducibility guide
 
-Read [scope and rerun requirements](KNOWN_GAPS.md) first. These instructions describe the uploaded configuration, manual handoffs, and inputs needed to regenerate additional artifacts. The saved files are representative examples rather than a complete archive of every study run.
+These instructions describe the uploaded configuration, manual handoffs, and inputs needed to regenerate additional artifacts. The saved files are representative examples rather than a complete archive of every study run.
 
 ## 1. Establish the environment and inputs
 

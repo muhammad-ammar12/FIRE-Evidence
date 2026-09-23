@@ -12,6 +12,6 @@ The cleanup commit adds documentation, portable dependency instructions, MIT lic
 git rev-parse HEAD
 ```
 
-A Git commit cannot reliably contain its own final SHA in a committed file. The final cleanup SHA is therefore recorded in the delivery report and visible in Git history; use `git rev-parse HEAD` for independent verification. No semantic release/tag is required. Compare scientific implementation against the pre-cleanup commit before rerunning; the uploaded Llama configuration and main-analysis GPT-4o configuration are distinguished in [the scope notes](KNOWN_GAPS.md).
+A Git commit cannot reliably contain its own final SHA in a committed file. The final cleanup SHA is therefore recorded in the delivery report and visible in Git history; use `git rev-parse HEAD` for independent verification. No semantic release/tag is required. Compare scientific implementation against the pre-cleanup commit before rerunning; the uploaded Llama configuration and main-analysis GPT-4o configuration are distinguished in [the software notes](SOFTWARE.md).
 
 This snapshot is a code and representative-output archive, not proof that a Git-hosted execution generated the original measurements. No unpublished publication identifier, DOI, or release date is implied.
