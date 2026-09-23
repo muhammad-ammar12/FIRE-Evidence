@@ -3,7 +3,7 @@
 FIRE-EVIDENCE has three separate FHIR-related operations. They must not be conflated:
 
 1. **LLM-generated FHIR-aligned intermediate:** `FHIR_aligned/latest_LLM.py` prompts GPT-4o for a Pydantic-parsed `EvidenceGraph`. `FHIR_aligned/pipeline.py` saves `str(graph_entities)` in DOCX. The schema uses resource-oriented names and local references, but this constructor-style graph is **not** native FHIR R5 JSON and has not been validated by the HL7 Validator.
-2. **native FHIR serialization:** `FHIR_compliant/FHIR-compliant_script.py` reads trusted intermediate DOCX/text, parses constructor assignments, maps supported objects to FHIR resource fields, rewrites known references, and writes a collection `Bundle`. This step does not call a model or validator. It runs lightweight local checks for Bundle/resource identity and unique `fullUrl`s.
+2. **Native FHIR serialization:** `FHIR_compliant/FHIR-compliant_script.py` reads trusted intermediate DOCX/text, parses constructor assignments, maps supported objects to FHIR resource fields, rewrites known references, and writes a collection `Bundle`. This step does not call a model or validator. It runs lightweight local checks for Bundle/resource identity and unique `fullUrl`s.
 3. **External base FHIR R5 validation:** Run the independent HL7 FHIR Validator CLI against the generated JSON using `-version 5.0.0`. This checks the generated Bundle against base R5. It is not equivalent to the serializer's checks and does not assert EBMonFHIR profile conformance.
 
 The [ordered guide](REPRODUCIBILITY.md#7-fhir-aligned-evidence-generation) shows the inputs and command for each step.
