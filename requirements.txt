@@ -1,6 +1,4 @@
-# Direct/runtime requirements recovered from the original environment inventory.
-# See docs/SOFTWARE.md: this is not a fully locked historical environment.
--c docs/environment-record.txt
+# FIRE-EVIDENCE runtime and notebook dependencies.
 openai==1.70.0
 langchain==0.3.27
 langchain-core==0.3.79
@@ -30,6 +28,5 @@ requests==2.32.5
 python-dotenv==1.1.0
 jupyterlab==4.3.6
 ipykernel==6.29.5
-# Imported by the notebooks, but exact historical versions were not recorded:
 ipywidgets
 nest-asyncio
