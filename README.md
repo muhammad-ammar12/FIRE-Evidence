@@ -28,7 +28,7 @@ The FHIR-aligned evidence model is an intermediate representation. Native FHIR R
 - Table extraction with `pdfplumber`.
 - Page-level embeddings and FAISS retrieval.
 - PICO and statistical-result extraction with configurable language models.
-- Item-level correctness/completeness evaluation, expert adjudication, and RAGAS evaluation.
+- Item-level correctness/completeness evaluation with [TRACE-Eval](https://github.com/muhammad-ammar12/TRACE-Eval), plus the included RAGAS evaluation notebook.
 - Pydantic-constrained FHIR-aligned evidence generation.
 - Conversion to native FHIR R5 `Bundle` resources.
 - Base FHIR R5 validation with the HL7 FHIR Validator.
@@ -38,14 +38,14 @@ The FHIR-aligned evidence model is an intermediate representation. Native FHIR R
 | Path | Purpose |
 | --- | --- |
 | [Extraction pipeline/](Extraction%20pipeline/) | PDF processing, indexing, prompts, retrieval, and evidence extraction. |
-| [Evaluation_code/](Evaluation_code/) | Correctness/completeness, adjudication, and RAGAS notebooks. |
+| [Evaluation_code/](Evaluation_code/) | Source-faithfulness and context-recall evaluation with RAGAS. |
 | [Baseline_pipeline/](Baseline_pipeline/) | Full-retrieval and first-indexed-unit baseline notebooks. |
 | [FHIR_aligned/](FHIR_aligned/) | Pydantic schema and LLM-based generation of the FHIR-aligned evidence model. |
 | [FHIR_compliant/FHIR-compliant_script.py](FHIR_compliant/FHIR-compliant_script.py) | Native FHIR R5 Bundle serialization. |
 | [FHIR_aligned_generations/](FHIR_aligned_generations/) | Example FHIR-aligned intermediate DOCX files. |
 | [Native_FHIR_transformation/](Native_FHIR_transformation/) | Example native FHIR Bundles and validator reports. |
-| [Annotations/](Annotations/) | Reference annotations used by the evaluation workflow. |
-| [GPT_4o_extractions_full_pipe/](GPT_4o_extractions_full_pipe/) | Saved GPT-4o extraction outputs. |
+| [Annotations/](Annotations/) | Reference annotations used by the RAGAS workflow and shared evaluation examples. |
+| [GPT_4o_extractions_full_pipe/](GPT_4o_extractions_full_pipe/) | Saved GPT-4o extraction outputs used by evaluation examples. |
 | [Llama 3.1 extractions/](Llama%203.1%20extractions/) | Saved Llama 3.1 extraction outputs. |
 | [docs/](docs/) | User guide, configuration reference, and FHIR documentation. |
 
@@ -128,13 +128,7 @@ The example writes a FAISS index and an extraction DOCX in the current directory
 
 ### 3. Run evaluation
 
-Open the correctness/completeness notebook:
-
-```console
-python -m jupyterlab Evaluation_code/Evaluation_framework.ipynb
-```
-
-Configure the study ID, annotation file, extraction file, output directory, embedding model, judge model, and thresholds in the notebook configuration cell. Run the evaluation cells, review the adjudication dashboard, and export the final JSON/CSV/XLSX results.
+Use [TRACE-Eval](https://github.com/muhammad-ammar12/TRACE-Eval) for item-level completeness, correctness, F1, cannot-verify reporting, and expert adjudication. Its user guide provides the environment setup, aligned input pairs, model and retrieval configuration, notebook order, and output files.
 
 For source-faithfulness and context-recall evaluation:
 
@@ -187,7 +181,7 @@ The reported validation configuration used HL7 FHIR Validator **6.9.9** (Git `f5
 FIRE-EVIDENCE separates workflow logic from model selection:
 
 - Evidence extraction: configure `chat_LLM` in `Extraction pipeline/test_llms_and_chains.py` with a LangChain-compatible chat model.
-- Correctness/completeness evaluation: configure the embedding and judge models in `Evaluation_code/Evaluation_framework.ipynb`.
+- Correctness/completeness evaluation: configure the embedding and judge models in the [TRACE-Eval](https://github.com/muhammad-ammar12/TRACE-Eval) notebook.
 - RAGAS evaluation: configure the evaluation model in `Evaluation_code/_RAGAS_Evaluation_pipeline.ipynb`.
 - FHIR-aligned generation: set the `llm_model` passed to `up_Format_evidence` in `FHIR_aligned/latest_LLM.py`.
 

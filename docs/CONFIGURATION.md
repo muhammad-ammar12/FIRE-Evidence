@@ -99,7 +99,7 @@ chat_LLM = ChatOllama(model="llama3.1", temperature=0.5)
 
 ## Correctness/completeness evaluation
 
-The reported item-level evaluation configuration is set in the configuration cell of `Evaluation_code/Evaluation_framework.ipynb`:
+The item-level correctness/completeness framework is maintained in [TRACE-Eval](https://github.com/muhammad-ammar12/TRACE-Eval). Its `Evaluation_framework.ipynb` configuration cell exposes:
 
 | Setting | Value |
 | --- | --- |
@@ -112,7 +112,7 @@ The reported item-level evaluation configuration is set in the configuration cel
 | Judge model | GPT-5.1 |
 | Judge temperature | 0 |
 
-Users can replace the embedding model, judge model, temperature, and retrieval thresholds in the notebook configuration cell.
+Users can replace the embedding model, judge model, temperature, and retrieval thresholds in the TRACE-Eval notebook configuration cell.
 
 The evaluation labels used for metric calculation are:
 
@@ -121,7 +121,7 @@ The evaluation labels used for metric calculation are:
 - `missing`
 - `cannot_verify`
 
-Expert decisions are entered through the notebook's adjudication dashboard before exporting final metrics.
+Expert decisions are entered through the TRACE-Eval notebook's adjudication dashboard before exporting final metrics.
 
 ## Source-faithfulness evaluation
 
