@@ -1,0 +1,29 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+# Python and notebook runtime files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.cache/
+llm_extraction_eval_framework_item_level.py
+# User-supplied publications and newly generated working data
+/inputs/
+/work/
+*_index/
+/saved_output.docx
+/batur-2025_computable.docx
+/*_extraction_LLama3.1
+# External validator binary and local FHIR package cache
+validator_cli.jar
+.fhir/
+# OS/IDE metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
