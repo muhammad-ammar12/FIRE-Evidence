@@ -74,7 +74,7 @@ os.environ["OPENAI_API_KEY"] = getpass.getpass("OPENAI_API_KEY: ")
 Create local input and output directories:
 
 ```console
-python -c "from pathlib import Path; [Path(p).mkdir(parents=True, exist_ok=True) for p in ('inputs', 'work', 'work/indexes', 'work/corr_comp_eval_outputs', 'work/native_fhir')]"
+python -c "from pathlib import Path; [Path(p).mkdir(parents=True, exist_ok=True) for p in ('inputs', 'work', 'work/indexes', 'work/native_fhir')]"
 ```
 
 ## 3. Prepare the clinical-study PDF
@@ -164,45 +164,18 @@ work/indexes/tanner_index/index.pkl
 
 ## 6. Run correctness/completeness evaluation
 
-Start JupyterLab:
+Use the separate [TRACE-Eval repository](https://github.com/muhammad-ammar12/TRACE-Eval) for reference-aligned item evaluation and expert adjudication:
 
 ```console
-python -m jupyterlab Evaluation_code/Evaluation_framework.ipynb
+git clone https://github.com/muhammad-ammar12/TRACE-Eval.git
+cd TRACE-Eval
+python -m pip install -r requirements.txt
+python -m jupyterlab Evaluation_framework.ipynb
 ```
 
-Use the repository root as the notebook working directory. If the kernel starts in `Evaluation_code/`, run:
+TRACE-Eval includes aligned reference/extraction examples and a step-by-step user guide. Configure the study pair, models, embedding provider, candidate-retrieval settings, and output directory in its notebook. Run the evaluation, complete expert adjudication, and export the final item-level CSV, XLSX, and JSON files.
 
-```python
-%cd ..
-```
-
-Then follow the notebook in this order:
-
-1. Run the imports and credential setup cells.
-2. Run the cell that writes `llm_extraction_eval_framework_item_level.py`.
-3. Run the following import cell.
-4. In the configuration cell, set:
-   - `study_id`;
-   - the reference annotation DOCX path;
-   - the extracted-evidence DOCX path;
-   - the output directory;
-   - the embedding model;
-   - the judge model and temperature;
-   - retrieval and lexical-matching thresholds.
-5. Run the evaluation cell to generate the initial results and review dashboard.
-6. Run the expert-adjudication widget and save the decisions.
-7. Run the final metrics cell to export adjudicated results.
-
-For the included Tanner example, the notebook configuration uses:
-
-```text
-study_id: tanner
-reference: Annotations/tanner.docx
-extraction: GPT_4o_extractions_full_pipe/tanner_extraction_4o
-output directory: work/corr_comp_eval_outputs
-```
-
-The notebook exports JSON, CSV, and XLSX files for item-level results, the human-review dashboard, adjudicated decisions, and final correctness/completeness metrics.
+Return to the FIRE-EVIDENCE repository root before continuing with the remaining stages.
 
 ## 7. Run source-faithfulness evaluation
 
@@ -326,7 +299,7 @@ Open the generated report and review the validator summary, errors, warnings, an
 | --- | --- |
 | Document processing | Page-structured DOCX under `work/`. |
 | Evidence extraction | FAISS index and extraction DOCX. |
-| Correctness/completeness evaluation | JSON/CSV/XLSX result and adjudication files. |
+| Correctness/completeness evaluation | TRACE-Eval JSON/CSV/XLSX result and adjudication files. |
 | RAGAS evaluation | Evaluation dataframe and notebook outputs. |
 | FHIR-aligned generation | Constructor-style FHIR-aligned evidence-model DOCX. |
 | Native serialization | FHIR R5 collection `Bundle` JSON. |
